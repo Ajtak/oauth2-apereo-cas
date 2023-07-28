@@ -18,7 +18,7 @@ composer require ajtak/oauth2-apereo-cas
 
 ## Usage
 
-Usage is the same as The League's OAuth client, using `\Ajtak\OAuth2\Client\Provider\Github` as the provider.
+Usage is the same as The League's OAuth client, using `\Ajtak\OAuth2\Client\Provider\ApereoCas` as the provider.
 
 ### Authorization Code Flow
 
