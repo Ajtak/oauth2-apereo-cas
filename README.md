@@ -1,7 +1,6 @@
 # Apereo CAS Provider for OAuth 2.0 Client
 [![Latest Version](https://img.shields.io/github/release/ajtak/oauth2-apereo-cas.svg?style=flat-square)](https://github.com/ajtak/oauth2-apereo-cas/releases)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
-[![Build Status](https://img.shields.io/travis/ajtak/oauth2-apereo-cas/master.svg?style=flat-square)](https://travis-ci.org/ajtak/oauth2-apereo-cas)
 [![Coverage Status](https://img.shields.io/scrutinizer/coverage/g/ajtak/oauth2-apereo-cas.svg?style=flat-square)](https://scrutinizer-ci.com/g/ajtak/oauth2-apereo-cas/code-structure)
 [![Quality Score](https://img.shields.io/scrutinizer/g/ajtak/oauth2-apereo-cas.svg?style=flat-square)](https://scrutinizer-ci.com/g/ajtak/oauth2-apereo-cas)
 [![Total Downloads](https://img.shields.io/packagist/dt/ajtak/oauth2-apereo-cas.svg?style=flat-square)](https://packagist.org/packages/ajtak/oauth2-apereo-cas)
