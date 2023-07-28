@@ -3,9 +3,19 @@
 namespace Ajtak\OAuth2\Client\Provider;
 
 use League\OAuth2\Client\Provider\ResourceOwnerInterface;
+use League\OAuth2\Client\Tool\ArrayAccessorTrait;
 
 class ApereoCasResourceOwner implements ResourceOwnerInterface
 {
+    use ArrayAccessorTrait;
+
+    /**
+     * Domain
+     *
+     * @var string
+     */
+    protected $domain;
+
     /**
      * Raw response
      *
