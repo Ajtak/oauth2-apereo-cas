@@ -24,7 +24,7 @@ Usage is the same as The League's OAuth client, using `\Ajtak\OAuth2\Client\Prov
 
 ```php
 $provider = new Ajtak\OAuth2\Client\Provider\ApereoCas([
-    'authServerUrl'     => 'cas-server-url'
+    'authServerUrl'     => 'cas-server-url',
     'clientId'          => '{cas-client-id}',
     'clientSecret'      => '{cas-client-secret}',
     'redirectUri'       => 'https://example.com/callback-url',

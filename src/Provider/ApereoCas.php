@@ -91,6 +91,7 @@ class ApereoCas extends AbstractProvider
     protected function getDefaultScopes()
     {
         $scopes = [
+            'openid',
             'profile',
             'email'
         ];
