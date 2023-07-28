@@ -140,7 +140,9 @@ namespace Ajtak\OAuth2\Client\Test\Provider
             $getAccessTokenResponseStream
                 ->method('__toString')
                 ->willReturn(
-                    '{"access_token":"mock_access_token","expires":"3600","refresh_token":"mock_refresh_token","otherKey":[1234]}'
+                    <<<'EOF'
+{"access_token":"mock_access_token","expires":"3600","refresh_token":"mock_refresh_token","otherKey":[1234]}
+EOF
                 );
 
             $postResponse = m::mock('Psr\Http\Message\ResponseInterface');
