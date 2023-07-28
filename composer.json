@@ -1,17 +1,12 @@
 {
-    "name": "league/oauth2-github",
-    "description": "Github OAuth 2.0 Client Provider for The PHP League OAuth2-Client",
+    "name": "ajtak/oauth2-apereo-cas",
+    "description": "Apereo CAS OAuth 2.0 Client Provider for The PHP League OAuth2-Client",
     "license": "MIT",
     "authors": [
         {
-            "name": "Steven Maguire",
-            "email": "stevenmaguire@gmail.com",
-            "homepage": "https://github.com/stevenmaguire"
-        },
-        {
-            "name": "Woody Gilk",
-            "email": "woody.gilk@gmail.com",
-            "homepage": "https://github.com/shadowhand"
+            "name": "Jakub Fridrich",
+            "email": "ajtak.jakub@gmail.com",
+            "homepage": "https://github.com/ajtak"
         }
     ],
     "keywords": [
@@ -20,7 +15,7 @@
         "client",
         "authorization",
         "authorisation",
-        "github"
+        "apereo-cas"
     ],
     "require": {
         "php": "^7.3 || ^8.0",
@@ -34,12 +29,12 @@
     },
     "autoload": {
         "psr-4": {
-            "League\\OAuth2\\Client\\": "src/"
+            "Ajtak\\OAuth2\\Client\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "League\\OAuth2\\Client\\Test\\": "test/src/"
+            "Ajtak\\OAuth2\\Client\\Test\\": "test/src/"
         }
     },
     "extra": {
