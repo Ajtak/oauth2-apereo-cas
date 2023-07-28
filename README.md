@@ -4,7 +4,7 @@
 [![Build Status](https://img.shields.io/travis/ajtak/oauth2-apereo-cas/master.svg?style=flat-square)](https://travis-ci.org/ajtak/oauth2-apereo-cas)
 [![Coverage Status](https://img.shields.io/scrutinizer/coverage/g/ajtak/oauth2-apereo-cas.svg?style=flat-square)](https://scrutinizer-ci.com/g/ajtak/oauth2-apereo-cas/code-structure)
 [![Quality Score](https://img.shields.io/scrutinizer/g/ajtak/oauth2-apereo-cas.svg?style=flat-square)](https://scrutinizer-ci.com/g/ajtak/oauth2-apereo-cas)
-[![Total Downloads](https://img.shields.io/packagist/dt/ajtak/oauth2-apereo-cas.svg?style=flat-square)](https://packagist.org/packages/league/oauth2-github)
+[![Total Downloads](https://img.shields.io/packagist/dt/ajtak/oauth2-apereo-cas.svg?style=flat-square)](https://packagist.org/packages/ajtak/oauth2-apereo-cas)
 
 This package provides Apereo CAS OAuth 2.0 / OIDC support for the PHP League's [OAuth 2.0 Client](https://github.com/thephpleague/oauth2-client).
 
@@ -58,7 +58,7 @@ if (!isset($_GET['code'])) {
         $user = $provider->getResourceOwner($token);
 
         // Use these details to create a new profile
-        printf('Hello %s!', $user->getNickname());
+        printf('Hello %s (%s)!', $user->getName(), $user->getEmail());
 
     } catch (Exception $e) {
 
@@ -81,13 +81,11 @@ $ ./vendor/bin/phpunit
 
 Please see [CONTRIBUTING](https://github.com/ajtak/oauth2-apereo-cas/blob/master/CONTRIBUTING.md) for details.
 
-
 ## Credits
-
 - [Jakub Fridrich](https://github.com/ajtak)
+- [Steven Maguire](https://github.com/stevenmaguire)
 - [All Contributors](https://github.com/ajtak/oauth2-apereo-cas/contributors)
 
 
 ## License
-
 The MIT License (MIT). Please see [License File](https://github.com/ajtak/oauth2-apereo-cas/blob/master/LICENSE) for more information.
