@@ -54,6 +54,34 @@ class ApereoCasResourceOwner implements ResourceOwnerInterface
     }
 
     /**
+     * Get resource owner url
+     *
+     * @return string|null
+     */
+    public function getUrl()
+    {
+        $urlParts = array_filter([$this->domain]);
+
+        return count($urlParts) ? implode('/', $urlParts) : null;
+    }
+
+
+    /**
+     * Set resource owner domain
+     *
+     * @param string $domain
+     *
+     * @return ApereoCasResourceOwner
+     */
+    public function setDomain($domain)
+    {
+        $this->domain = $domain;
+
+        return $this;
+    }
+
+
+    /**
      * Return all of the owner details available as an array.
      *
      * @return array

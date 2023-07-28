@@ -2,7 +2,6 @@
 
 namespace Ajtak\OAuth2\Client\Provider;
 
-use Exception;
 use League\OAuth2\Client\Provider\AbstractProvider;
 use League\OAuth2\Client\Provider\Exception\IdentityProviderException;
 use League\OAuth2\Client\Token\AccessToken;
@@ -44,7 +43,7 @@ class ApereoCas extends AbstractProvider
      */
     public function getBaseAuthorizationUrl()
     {
-        return $this->getBaseUrl() . '/protocol/openid-connect/auth';
+        return $this->getBaseUrl() . '/oidc/authorize';
     }
 
     /**
@@ -56,7 +55,7 @@ class ApereoCas extends AbstractProvider
      */
     public function getBaseAccessTokenUrl(array $params)
     {
-        return $this->getBaseUrl() . '/protocol/openid-connect/token';
+        return $this->getBaseUrl() . '/oidc/accessToken';
     }
 
     /**
@@ -68,32 +67,7 @@ class ApereoCas extends AbstractProvider
      */
     public function getResourceOwnerDetailsUrl(AccessToken $token)
     {
-        return $this->getBaseUrl() . '/protocol/openid-connect/userinfo';
-    }
-
-    /**
-     * Builds the logout URL.
-     *
-     * @param array $options
-     * @return string Authorization URL
-     */
-    public function getLogoutUrl(array $options = [])
-    {
-        $base = $this->getBaseLogoutUrl();
-        $params = $this->getAuthorizationParameters($options);
-
-        $query = $this->getAuthorizationQuery($params);
-        return $this->appendQuery($base, $query);
-    }
-
-    /**
-     * Get logout url to logout of session token
-     *
-     * @return string
-     */
-    private function getBaseLogoutUrl()
-    {
-        return $this->getBaseUrl() . '/protocol/openid-connect/logout';
+        return $this->getBaseUrl() . '/oidc/profile';
     }
 
     /**
@@ -181,7 +155,6 @@ class ApereoCas extends AbstractProvider
         return $this->createResourceOwner($response, $token);
     }
 
-
     /**
      * Parses the response according to its content-type header.
      *
@@ -189,22 +162,8 @@ class ApereoCas extends AbstractProvider
      * @return array
      * @throws UnexpectedValueException
      */
-    protected function parseResponse(ResponseInterface $response)
+    protected function parseResponse(ResponseInterface $response): array
     {
-        // We have a problem with keycloak when the userinfo responses
-        // with a jwt token
-        // Because it just return a jwt as string with the header
-        // application/jwt
-        // This can't be parsed to a array
-        // Dont know why this function only allow an array as return value...
-        $content = (string)$response->getBody();
-        $type = $this->getContentType($response);
-
-        if (strpos($type, 'jwt') !== false) {
-            // Here we make the temporary array
-            return ['jwt' => $content];
-        }
-
         return parent::parseResponse($response);
     }
 }

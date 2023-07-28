@@ -1,8 +1,8 @@
 <?php
 
-namespace League\OAuth2\Client\Test\Provider;
+namespace Ajtak\OAuth2\Client\Test\Provider;
 
-use League\OAuth2\Client\Provider\ApereoCasResourceOwner;
+use Ajtak\OAuth2\Client\Provider\ApereoCasResourceOwner;
 use Mockery as m;
 use PHPUnit\Framework\TestCase;
 
