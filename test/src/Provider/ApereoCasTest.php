@@ -1,6 +1,6 @@
 <?php
 
-namespace League\OAuth2\Client\Test\Provider;
+namespace Ajtak\OAuth2\Client\Test\Provider;
 
 use League\OAuth2\Client\Provider\Exception\IdentityProviderException;
 use League\OAuth2\Client\Tool\QueryBuilderTrait;
@@ -9,7 +9,6 @@ use PHPUnit\Framework\TestCase;
 
 use function http_build_query;
 use function json_encode;
-use function sprintf;
 use function uniqid;
 
 class ApereoCasTest extends TestCase
@@ -20,7 +19,7 @@ class ApereoCasTest extends TestCase
 
     protected function setUp(): void
     {
-        $this->provider = new \League\OAuth2\Client\Provider\ApereoCas(
+        $this->provider = new \Ajtak\OAuth2\Client\Provider\ApereoCas(
             [
             'clientId' => 'mock_client_id',
             'clientSecret' => 'mock_secret',

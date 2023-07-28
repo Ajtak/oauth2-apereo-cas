@@ -41,7 +41,7 @@ class ApereoCas extends AbstractProvider
      *
      * @return string
      */
-    public function getBaseAuthorizationUrl()
+    public function getBaseAuthorizationUrl(): string
     {
         return $this->getBaseUrl() . '/oidc/authorize';
     }

@@ -1,12 +1,12 @@
 # Apereo CAS Provider for OAuth 2.0 Client
-[![Latest Version](https://img.shields.io/github/release/thephpleague/oauth2-github.svg?style=flat-square)](https://github.com/thephpleague/oauth2-github/releases)
+[![Latest Version](https://img.shields.io/github/release/ajtak/oauth2-apereo-cas.svg?style=flat-square)](https://github.com/ajtak/oauth2-apereo-cas/releases)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
-[![Build Status](https://img.shields.io/travis/thephpleague/oauth2-github/master.svg?style=flat-square)](https://travis-ci.org/thephpleague/oauth2-github)
-[![Coverage Status](https://img.shields.io/scrutinizer/coverage/g/thephpleague/oauth2-github.svg?style=flat-square)](https://scrutinizer-ci.com/g/thephpleague/oauth2-github/code-structure)
-[![Quality Score](https://img.shields.io/scrutinizer/g/thephpleague/oauth2-github.svg?style=flat-square)](https://scrutinizer-ci.com/g/thephpleague/oauth2-github)
-[![Total Downloads](https://img.shields.io/packagist/dt/league/oauth2-github.svg?style=flat-square)](https://packagist.org/packages/league/oauth2-github)
+[![Build Status](https://img.shields.io/travis/ajtak/oauth2-apereo-cas/master.svg?style=flat-square)](https://travis-ci.org/ajtak/oauth2-apereo-cas)
+[![Coverage Status](https://img.shields.io/scrutinizer/coverage/g/ajtak/oauth2-apereo-cas.svg?style=flat-square)](https://scrutinizer-ci.com/g/ajtak/oauth2-apereo-cas/code-structure)
+[![Quality Score](https://img.shields.io/scrutinizer/g/ajtak/oauth2-apereo-cas.svg?style=flat-square)](https://scrutinizer-ci.com/g/ajtak/oauth2-apereo-cas)
+[![Total Downloads](https://img.shields.io/packagist/dt/ajtak/oauth2-apereo-cas.svg?style=flat-square)](https://packagist.org/packages/league/oauth2-github)
 
-This package provides Apereo CAS OAuth 2.0 support for the PHP League's [OAuth 2.0 Client](https://github.com/thephpleague/oauth2-client).
+This package provides Apereo CAS OAuth 2.0 / OIDC support for the PHP League's [OAuth 2.0 Client](https://github.com/thephpleague/oauth2-client).
 
 ## Installation
 
@@ -23,9 +23,10 @@ Usage is the same as The League's OAuth client, using `\Ajtak\OAuth2\Client\Prov
 ### Authorization Code Flow
 
 ```php
-$provider = new Ajtak\OAuth2\Client\Provider\Github([
-    'clientId'          => '{github-client-id}',
-    'clientSecret'      => '{github-client-secret}',
+$provider = new Ajtak\OAuth2\Client\Provider\ApereoCas([
+    'authServerUrl'     => 'cas-server-url'
+    'clientId'          => '{cas-client-id}',
+    'clientSecret'      => '{cas-client-secret}',
     'redirectUri'       => 'https://example.com/callback-url',
 ]);
 
@@ -70,43 +71,6 @@ if (!isset($_GET['code'])) {
 }
 ```
 
-### Managing Scopes
-
-When creating your Github authorization URL, you can specify the state and scopes your application may authorize.
-
-```php
-$options = [
-    'state' => 'OPTIONAL_CUSTOM_CONFIGURED_STATE',
-    'scope' => ['user','user:email','repo'] // array or string; at least 'user:email' is required
-];
-
-$authorizationUrl = $provider->getAuthorizationUrl($options);
-```
-If neither are defined, the provider will utilize internal defaults.
-
-At the time of authoring this documentation, the [following scopes are available](https://developer.github.com/v3/oauth/#scopes).
-
-- user
-- user:email
-- user:follow
-- public_repo
-- repo
-- repo_deployment
-- repo:status
-- delete_repo
-- notifications
-- gist
-- read:repo_hook
-- write:repo_hook
-- admin:repo_hook
-- admin:org_hook
-- read:org
-- write:org
-- admin:org
-- read:public_key
-- write:public_key
-- admin:public_key
-
 ## Testing
 
 ``` bash
@@ -115,15 +79,15 @@ $ ./vendor/bin/phpunit
 
 ## Contributing
 
-Please see [CONTRIBUTING](https://github.com/thephpleague/oauth2-github/blob/master/CONTRIBUTING.md) for details.
+Please see [CONTRIBUTING](https://github.com/ajtak/oauth2-apereo-cas/blob/master/CONTRIBUTING.md) for details.
 
 
 ## Credits
 
-- [Steven Maguire](https://github.com/stevenmaguire)
-- [All Contributors](https://github.com/thephpleague/oauth2-github/contributors)
+- [Jakub Fridrich](https://github.com/ajtak)
+- [All Contributors](https://github.com/ajtak/oauth2-apereo-cas/contributors)
 
 
 ## License
 
-The MIT License (MIT). Please see [License File](https://github.com/thephpleague/oauth2-github/blob/master/LICENSE) for more information.
+The MIT License (MIT). Please see [License File](https://github.com/ajtak/oauth2-apereo-cas/blob/master/LICENSE) for more information.
